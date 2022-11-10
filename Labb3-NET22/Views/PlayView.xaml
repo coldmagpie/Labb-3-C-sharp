@@ -1,0 +1,181 @@
+﻿<UserControl
+    x:Class="Labb3_NET22.Views.PlayView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dataModels="clr-namespace:Labb3_NET22.DataModels"
+    xmlns:local="clr-namespace:Labb3_NET22"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:Labb3_NET22.ViewModels"
+    xmlns:views="clr-namespace:Labb3_NET22.Views"
+    d:DesignHeight="400"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <Grid Background="Bisque">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="55" />
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="45" />
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="4"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            FontSize="20">
+            Question:
+        </TextBlock>
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="5"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            FontSize="20"
+            Text="{Binding QuestionCounter, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="20">
+            Score:
+        </TextBlock>
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="20"
+            Text="{Binding Score, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="20">
+            /
+        </TextBlock>
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="3"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="20"
+            Text="{Binding QuizLength, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBlock
+            x:Name="Statement"
+            Grid.Row="1"
+            Grid.Column="4"
+            Grid.ColumnSpan="3"
+            Width="600"
+            Height="70"
+            Background="Transparent"
+            FontSize="20"
+            Text="{Binding Statement, UpdateSourceTrigger=PropertyChanged}"
+            TextWrapping="Wrap" />
+        <StackPanel
+            Grid.Row="2"
+            Grid.RowSpan="4"
+            Grid.Column="4"
+            Grid.ColumnSpan="3">
+            <RadioButton IsChecked="{Binding SelectedAnswerOne}">
+                <TextBlock
+                    x:Name="Ans1"
+                    Width="600"
+                    Height="35"
+                    HorizontalAlignment="Left"
+                    Background="Bisque"
+                    FontSize="16"
+                    Text="{Binding Answers[0], UpdateSourceTrigger=PropertyChanged}" />
+            </RadioButton>
+            <RadioButton IsChecked="{Binding SelectedAnswerTwo}">
+                <TextBlock
+                    x:Name="Ans2"
+                    Width="600"
+                    Height="35"
+                    HorizontalAlignment="Left"
+                    Background="Bisque"
+                    FontSize="16"
+                    Text="{Binding Answers[1], UpdateSourceTrigger=PropertyChanged}" />
+            </RadioButton>
+            <RadioButton IsChecked="{Binding SelectedAnswerThree}">
+                <TextBlock
+                    x:Name="Ans3"
+                    Width="600"
+                    Height="35"
+                    HorizontalAlignment="Left"
+                    Background="Bisque"
+                    FontSize="16"
+                    Text="{Binding Answers[2], UpdateSourceTrigger=PropertyChanged}" />
+            </RadioButton>
+            <RadioButton IsChecked="{Binding SelectedAnswerFour}">
+                <TextBlock
+                    x:Name="Ans4"
+                    Width="600"
+                    Height="35"
+                    HorizontalAlignment="Left"
+                    Background="Bisque"
+                    FontSize="16"
+                    Text="{Binding Answers[3], UpdateSourceTrigger=PropertyChanged}" />
+            </RadioButton>
+        </StackPanel>
+        <Button
+            x:Name="Correct"
+            Grid.Row="5"
+            Grid.Column="4"
+            Grid.ColumnSpan="2"
+            Width="300"
+            Height="35"
+            HorizontalAlignment="Left"
+            Background="Bisque"
+            Command="{Binding UpdateCorrectCommand}"
+            Content="Click here to get correct answer"
+            FontSize="16" />
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="6"
+            Width="100"
+            Height="35"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Background="Bisque"
+            FontSize="16"
+            Text="{Binding CorrectAnswer, UpdateSourceTrigger=PropertyChanged}" />
+        <Button
+            x:Name="Next"
+            Grid.Row="6"
+            Grid.Column="4"
+            Width="100"
+            Height="35"
+            HorizontalAlignment="Center"
+            Background="Azure"
+            Command="{Binding NextQuestionCommand}"
+            Content="Next"
+            FontSize="16" />
+        <Button
+            x:Name="Back"
+            Grid.Row="6"
+            Grid.Column="6"
+            Width="100"
+            Height="35"
+            Background="Azure"
+            Command="{Binding NavigateGoBackCommand}"
+            Content="Go Back"
+            FontSize="16" />
+    </Grid>
+</UserControl>

@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Labb3_NET22.Managers;
+using Labb3_NET22.ViewModels;
 
 namespace Labb3_NET22
 {
@@ -13,5 +15,22 @@ namespace Labb3_NET22
     /// </summary>
     public partial class App : Application
     {
+    
+            private readonly NavigationManager _navigationManager;
+            private readonly QuizManager _quizManager;
+
+            public App()
+            {
+                _navigationManager = new NavigationManager();
+                _quizManager = new QuizManager();
+            }
+            protected override void OnStartup(StartupEventArgs e)
+            {
+                _navigationManager.CurrentViewModel = new StartViewModel(_navigationManager, _quizManager);
+                var mainWindow = new MainWindow { DataContext = new MainViewModel(_navigationManager) };
+                mainWindow.Show();
+                base.OnStartup(e);
+            }
+          
     }
 }

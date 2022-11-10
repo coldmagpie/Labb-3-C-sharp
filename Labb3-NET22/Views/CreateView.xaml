@@ -1,0 +1,205 @@
+﻿<UserControl
+    x:Class="Labb3_NET22.Views.CreateView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Labb3_NET22.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:Labb3_NET22.ViewModels"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid Background="Bisque">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130" />
+            <ColumnDefinition Width="560" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+        <TextBlock 
+            Grid.Row="0"
+            Grid.Column="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="20">
+            Create a quiz
+        </TextBlock>
+       
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="16">
+            Title
+        </TextBlock>
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="16">
+            Statement
+        </TextBlock>
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="16">
+            Answer 1
+        </TextBlock>
+        <TextBlock
+            Grid.Row="4"
+            Grid.Column="0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="16">
+            Answer 2
+        </TextBlock>
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="16">
+            Answer 3
+        </TextBlock>
+        <TextBlock
+            Grid.Row="6"
+            Grid.Column="0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="16">
+            Answer 4
+        </TextBlock>
+        <TextBlock
+            Grid.Row="7"
+            Grid.Column="0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="16">
+            correct answer
+        </TextBlock>
+
+        <TextBox
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="560"
+            Height="35"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Background="{x:Null}"
+            FontSize="16"
+            Text="{Binding Title, Mode=TwoWay}" />
+        <TextBox
+            Grid.Row="2"
+            Grid.Column="1"
+            Width="560"
+            Height="60"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Background="{x:Null}"
+            FontSize="16"
+            Text="{Binding NewStatement, Mode=TwoWay}"
+            TextWrapping="Wrap" />
+        <TextBox
+            Grid.Row="3"
+            Grid.Column="1"
+            Width="560"
+            Height="35"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Background="{x:Null}"
+            FontSize="16"
+            Text="{Binding Answer1, Mode=TwoWay}" />
+        <TextBox
+            Grid.Row="4"
+            Grid.Column="1"
+            Width="560"
+            Height="35"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Background="{x:Null}"
+            FontSize="16"
+            Text="{Binding Answer2, Mode=TwoWay}" />
+        <TextBox
+            Grid.Row="5"
+            Grid.Column="1"
+            Width="560"
+            Height="35"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Background="{x:Null}"
+            FontSize="16"
+            Text="{Binding Answer3, Mode=TwoWay}" />
+        <TextBox
+            Grid.Row="6"
+            Grid.Column="1"
+            Width="560"
+            Height="35"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Background="{x:Null}"
+            FontSize="16"
+            Text="{Binding Answer4, Mode=TwoWay}" />
+
+        <ComboBox
+            Grid.Row="7"
+            Grid.Column="1"
+            Width="100"
+            Height="35"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            FontSize="16"
+            SelectedIndex="{Binding CorrectAnswerIndex}">
+            <ComboBoxItem Content="1" />
+            <ComboBoxItem Content="2" />
+            <ComboBoxItem Content="3" />
+            <ComboBoxItem Content="4" />
+        </ComboBox>
+        <Button
+            Grid.Row="7"
+            Grid.Column="1"
+            Width="150"
+            Height="35"
+            HorizontalAlignment="Right"
+            Background="Azure"
+            Command="{Binding SaveQuizCommand}"
+            FontSize="16">
+            Save quiz
+        </Button>
+        <Button
+            Grid.Row="7"
+            Grid.Column="1"
+            Width="150"
+            Height="35"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="Azure"
+            Command="{Binding SaveQuestionCommand}"
+            FontSize="16">
+            Save question
+        </Button>
+
+        <Button
+            x:Name="Back"
+            Grid.Row="0"
+            Grid.Column="2"
+            Width="80"
+            Height="35"
+            Background="Azure"
+            Command="{Binding NavigateGoBackCommand}"
+            Content="Go Back"
+            FontSize="16" />
+    </Grid>
+</UserControl>

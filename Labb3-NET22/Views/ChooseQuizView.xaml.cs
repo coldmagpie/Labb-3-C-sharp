@@ -12,17 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Labb3_NET22.ViewModels;
-using Labb3_NET22.Views;
 
-namespace Labb3_NET22
+namespace Labb3_NET22.Views
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public partial class ChooseQuizView : UserControl
     {
-        public MainWindow()
+        public ChooseQuizView()
         {
             InitializeComponent();
         }
