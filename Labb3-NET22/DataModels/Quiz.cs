@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text.Json;
-using System.Xml;
 
 namespace Labb3_NET22.DataModels;   
 

@@ -177,9 +177,9 @@
             Grid.Column="1"
             Width="150"
             Height="30"
-            HorizontalAlignment="Right"
+            HorizontalAlignment="Left"
             Background="Azure"
-            Command="{Binding NavigateSaveCommand}"
+            Command="{Binding NavigateUpdateCommand}"
             Content="Update question"
             FontSize="16" />
         <Button
@@ -188,7 +188,7 @@
             Grid.Column="2"
             Width="150"
             Height="30"
-            HorizontalAlignment="Right"
+            HorizontalAlignment="Left"
             Background="Azure"
             Command="{Binding NavigateRemoveCommand}"
             Content="Remove question"
@@ -199,21 +199,10 @@
             Grid.Column="3"
             Width="150"
             Height="30"
-            HorizontalAlignment="Right"
+            HorizontalAlignment="Left"
             Background="Azure"
             Command="{Binding NavigateGoBackCommand}"
             Content="Go Back"
-            FontSize="16" />
-        <Button
-            x:Name="Add"
-            Grid.Row="7"
-            Grid.Column="0"
-            Width="130"
-            Height="30"
-            HorizontalAlignment="Right"
-            Background="Azure"
-            Command="{Binding NavigateAddQuestionCommand}"
-            Content="Add question"
             FontSize="16" />
     </Grid>
 </UserControl>

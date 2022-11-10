@@ -1,15 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using Labb3_NET22.DataModels;
-using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
-using System.Windows.Controls;
 using Labb3_NET22.Managers;
 
 namespace Labb3_NET22.ViewModels

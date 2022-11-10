@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Windows.Documents;
+﻿using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Labb3_NET22.DataModels;
@@ -18,8 +14,7 @@ public class EditingViewModel : ObservableObject
     public ObservableCollection<Question> Questions { get; set; } = new ();
     public IRelayCommand NavigateGoBackCommand { get; }
     public IRelayCommand NavigateRemoveCommand { get; }
-    public IRelayCommand NavigateSaveCommand { get; }
-    public IRelayCommand NavigateAddQuestionCommand { get; }
+    public IRelayCommand NavigateUpdateCommand { get; }
 
     private Question _selectedQuestion;
     private int _selectedQuestionIndex;
@@ -38,6 +33,8 @@ public class EditingViewModel : ObservableObject
                 Answer3 = _selectedQuestion.Answers[2];
                 Answer4 = _selectedQuestion.Answers[3];
                 CorrectAnswerIndex = _selectedQuestion.CorrectAnswer;
+                NavigateUpdateCommand.NotifyCanExecuteChanged();
+                NavigateRemoveCommand.NotifyCanExecuteChanged();
             }
         }
     }
@@ -47,20 +44,8 @@ public class EditingViewModel : ObservableObject
         _quizManager = quizManager;
         _currentQuiz = _quizManager.CurrentQuiz;
         UpdateQuestions();
-        _selectedQuestionIndex = 0;
-        NavigateAddQuestionCommand = new RelayCommand(() =>
-        {
-            string[] newAnswers = { Answer1, Answer2, Answer3, Answer4 };
-            _currentQuiz.AddQuestion(Statement,newAnswers, CorrectAnswerIndex);
-            _quizManager.SaveCurrentQuiz();
-            UpdateQuestions();
-            Statement = string.Empty;
-            Answer1 = string.Empty;
-            Answer2 = string.Empty;
-            Answer3 = string.Empty;
-            Answer4 = string.Empty;
-        });
-        NavigateSaveCommand = new RelayCommand(() =>
+        _selectedQuestionIndex = Questions.Count; 
+        NavigateUpdateCommand = new RelayCommand(() =>
         {
             string[] newAnswers = { Answer1, Answer2, Answer3, Answer4 };
             _currentQuiz.ReplaceQuestion(_selectedQuestionIndex, new Question(Statement, newAnswers, CorrectAnswerIndex)); 
@@ -71,7 +56,7 @@ public class EditingViewModel : ObservableObject
             Answer2 = string.Empty;
             Answer3 = string.Empty;
             Answer4 = string.Empty;
-        });
+        }, () => _selectedQuestionIndex < Questions.Count);
         NavigateRemoveCommand = new RelayCommand( () =>
         {
             _currentQuiz.RemoveQuestion(_selectedQuestionIndex);
@@ -83,7 +68,7 @@ public class EditingViewModel : ObservableObject
             Answer2 = string.Empty;
             Answer3 = string.Empty;
             Answer4 = string.Empty;
-        });
+        }, () => _selectedQuestionIndex < Questions.Count);
         NavigateGoBackCommand = new RelayCommand(() => _navigationManager.CurrentViewModel = new StartViewModel(_navigationManager, _quizManager));
     }
 
