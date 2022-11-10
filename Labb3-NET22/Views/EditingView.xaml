@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:Labb3_NET22.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignHeight="450"
-    d:DesignWidth="680"
+    d:DesignWidth="700"
     mc:Ignorable="d">
     <Grid Background="Bisque">
         <Grid.RowDefinitions>
@@ -23,7 +23,7 @@
             <ColumnDefinition Width="150" />
             <ColumnDefinition Width="180" />
             <ColumnDefinition Width="180" />
-            <ColumnDefinition Width="180" />
+            <ColumnDefinition Width="150" />
             <ColumnDefinition Width="50" />
         </Grid.ColumnDefinitions>
         <ComboBox
@@ -104,7 +104,7 @@
             Grid.Row="1"
             Grid.Column="1"
             Grid.ColumnSpan="3"
-            Width="540"
+            Width="510"
             Height="50"
             HorizontalAlignment="Center"
             Background="Bisque"
@@ -116,7 +116,7 @@
             Grid.Row="2"
             Grid.Column="1"
             Grid.ColumnSpan="3"
-            Width="540"
+            Width="510"
             Height="35"
             HorizontalAlignment="Center"
             Background="Bisque"
@@ -127,7 +127,7 @@
             Grid.Row="3"
             Grid.Column="1"
             Grid.ColumnSpan="3"
-            Width="540"
+            Width="510"
             Height="35"
             HorizontalAlignment="Center"
             Background="Bisque"
@@ -138,7 +138,7 @@
             Grid.Row="4"
             Grid.Column="1"
             Grid.ColumnSpan="3"
-            Width="540"
+            Width="510"
             Height="35"
             HorizontalAlignment="Center"
             Background="Bisque"
@@ -149,7 +149,7 @@
             Grid.Row="5"
             Grid.Column="1"
             Grid.ColumnSpan="3"
-            Width="540"
+            Width="510"
             Height="35"
             HorizontalAlignment="Center"
             Background="Bisque"
@@ -175,7 +175,7 @@
             x:Name="Save"
             Grid.Row="7"
             Grid.Column="1"
-            Width="150"
+            Width="130"
             Height="30"
             HorizontalAlignment="Left"
             Background="Azure"
@@ -186,7 +186,7 @@
             x:Name="Remove"
             Grid.Row="7"
             Grid.Column="2"
-            Width="150"
+            Width="130"
             Height="30"
             HorizontalAlignment="Left"
             Background="Azure"
@@ -197,7 +197,7 @@
             x:Name="Back"
             Grid.Row="7"
             Grid.Column="3"
-            Width="150"
+            Width="130"
             Height="30"
             HorizontalAlignment="Left"
             Background="Azure"

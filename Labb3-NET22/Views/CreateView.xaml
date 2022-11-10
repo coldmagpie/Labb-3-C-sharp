@@ -7,33 +7,38 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:Labb3_NET22.ViewModels"
     d:DesignHeight="450"
-    d:DesignWidth="800"
+    d:DesignWidth="700"
     mc:Ignorable="d">
     <Grid Background="Bisque">
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="100" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="45" />
+            <RowDefinition Height="45" />
+            <RowDefinition Height="70" />
+            <RowDefinition Height="45" />
+            <RowDefinition Height="45" />
+            <RowDefinition Height="45" />
+            <RowDefinition Height="45" />
+            <RowDefinition Height="45" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="130" />
-            <ColumnDefinition Width="560" />
+            <ColumnDefinition Width="120" />
             <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="20" />
+
         </Grid.ColumnDefinitions>
-        <TextBlock 
+        <TextBlock
             Grid.Row="0"
             Grid.Column="1"
+            Grid.ColumnSpan="3"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            FontSize="20">
+            FontSize="24">
             Create a quiz
         </TextBlock>
-       
+
         <TextBlock
             Grid.Row="1"
             Grid.Column="0"
@@ -88,13 +93,14 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             FontSize="16">
-            correct answer
+            Correct answer
         </TextBlock>
 
         <TextBox
             Grid.Row="1"
             Grid.Column="1"
-            Width="560"
+            Grid.ColumnSpan="4"
+            Width="510"
             Height="35"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -104,7 +110,8 @@
         <TextBox
             Grid.Row="2"
             Grid.Column="1"
-            Width="560"
+            Grid.ColumnSpan="4"
+            Width="510"
             Height="60"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -115,7 +122,8 @@
         <TextBox
             Grid.Row="3"
             Grid.Column="1"
-            Width="560"
+            Grid.ColumnSpan="4"
+            Width="510"
             Height="35"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -125,7 +133,8 @@
         <TextBox
             Grid.Row="4"
             Grid.Column="1"
-            Width="560"
+            Grid.ColumnSpan="4"
+            Width="510"
             Height="35"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -135,7 +144,8 @@
         <TextBox
             Grid.Row="5"
             Grid.Column="1"
-            Width="560"
+            Grid.ColumnSpan="4"
+            Width="510"
             Height="35"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -145,7 +155,8 @@
         <TextBox
             Grid.Row="6"
             Grid.Column="1"
-            Width="560"
+            Grid.ColumnSpan="4"
+            Width="510"
             Height="35"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -169,8 +180,8 @@
         </ComboBox>
         <Button
             Grid.Row="7"
-            Grid.Column="1"
-            Width="150"
+            Grid.Column="2"
+            Width="110"
             Height="35"
             HorizontalAlignment="Right"
             Background="Azure"
@@ -180,8 +191,8 @@
         </Button>
         <Button
             Grid.Row="7"
-            Grid.Column="1"
-            Width="150"
+            Grid.Column="3"
+            Width="110"
             Height="35"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
@@ -190,13 +201,13 @@
             FontSize="16">
             Save question
         </Button>
-
         <Button
             x:Name="Back"
-            Grid.Row="0"
-            Grid.Column="2"
-            Width="80"
+            Grid.Row="7"
+            Grid.Column="4"
+            Width="110"
             Height="35"
+            HorizontalAlignment="Left"
             Background="Azure"
             Command="{Binding NavigateGoBackCommand}"
             Content="Go Back"
