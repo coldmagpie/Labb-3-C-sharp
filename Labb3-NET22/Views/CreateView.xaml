@@ -180,10 +180,10 @@
         </ComboBox>
         <Button
             Grid.Row="7"
-            Grid.Column="2"
+            Grid.Column="3"
             Width="110"
             Height="35"
-            HorizontalAlignment="Right"
+            HorizontalAlignment="Center"
             Background="Azure"
             Command="{Binding SaveQuizCommand}"
             FontSize="16">
@@ -191,7 +191,7 @@
         </Button>
         <Button
             Grid.Row="7"
-            Grid.Column="3"
+            Grid.Column="2"
             Width="110"
             Height="35"
             HorizontalAlignment="Center"
@@ -207,7 +207,7 @@
             Grid.Column="4"
             Width="110"
             Height="35"
-            HorizontalAlignment="Left"
+            HorizontalAlignment="Center"
             Background="Azure"
             Command="{Binding NavigateGoBackCommand}"
             Content="Go Back"
